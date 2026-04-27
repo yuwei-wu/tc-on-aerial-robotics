@@ -38,10 +38,8 @@
         },
         "required": [
           "label",
-          "link",
-          "enable"
-        ],
-        "additionalProperties": false
+          "link"
+        ]
       }
     },
     "counter": {
@@ -74,8 +72,7 @@
           "number",
           "measurement",
           "color"
-        ],
-        "additionalProperties": false
+        ]
       }
     },
     "gallery": {
@@ -94,8 +91,7 @@
       "required": [
         "title",
         "images"
-      ],
-      "additionalProperties": false
+      ]
     },
     "features": {
       "type": "object",
@@ -119,10 +115,8 @@
           },
           "required": [
             "label",
-            "link",
-            "enable"
-          ],
-          "additionalProperties": false
+            "link"
+          ]
         },
         "features_list": {
           "type": "array",
@@ -139,8 +133,7 @@
             "required": [
               "title",
               "content"
-            ],
-            "additionalProperties": false
+            ]
           }
         }
       },
@@ -148,8 +141,7 @@
         "title",
         "button",
         "features_list"
-      ],
-      "additionalProperties": false
+      ]
     },
     "members": {
       "type": "object",
@@ -185,8 +177,7 @@
               "name",
               "field",
               "image"
-            ],
-            "additionalProperties": false
+            ]
           }
         }
       },
@@ -194,8 +185,7 @@
         "title",
         "description",
         "member_list"
-      ],
-      "additionalProperties": false
+      ]
     },
     "$schema": {
       "type": "string"
@@ -205,6 +195,5 @@
     "title",
     "page_title",
     "members"
-  ],
-  "additionalProperties": false
+  ]
 }

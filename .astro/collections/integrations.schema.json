@@ -45,8 +45,7 @@
       "required": [
         "label",
         "link"
-      ],
-      "additionalProperties": false
+      ]
     },
     "draft": {
       "default": false,
@@ -58,6 +57,5 @@
   },
   "required": [
     "title"
-  ],
-  "additionalProperties": false
+  ]
 }

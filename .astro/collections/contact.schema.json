@@ -24,6 +24,5 @@
   "required": [
     "title",
     "page_title"
-  ],
-  "additionalProperties": false
+  ]
 }

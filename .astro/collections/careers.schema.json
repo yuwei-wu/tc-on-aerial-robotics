@@ -49,8 +49,7 @@
               "content",
               "color",
               "icon"
-            ],
-            "additionalProperties": false
+            ]
           }
         }
       },
@@ -58,8 +57,7 @@
         "title",
         "description",
         "benefit_list"
-      ],
-      "additionalProperties": false
+      ]
     },
     "sidebar_content": {
       "type": "object",
@@ -86,10 +84,8 @@
           },
           "required": [
             "label",
-            "link",
-            "enable"
-          ],
-          "additionalProperties": false
+            "link"
+          ]
         },
         "enable": {
           "default": true,
@@ -99,10 +95,8 @@
       "required": [
         "title",
         "content",
-        "button",
-        "enable"
-      ],
-      "additionalProperties": false
+        "button"
+      ]
     },
     "career": {
       "type": "object",
@@ -117,8 +111,7 @@
       "required": [
         "title",
         "subtitle"
-      ],
-      "additionalProperties": false
+      ]
     },
     "excerpt": {
       "type": "string"
@@ -151,9 +144,6 @@
     }
   },
   "required": [
-    "title",
-    "categories",
-    "draft"
-  ],
-  "additionalProperties": false
+    "title"
+  ]
 }
