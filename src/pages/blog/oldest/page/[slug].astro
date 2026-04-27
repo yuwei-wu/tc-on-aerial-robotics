@@ -11,7 +11,7 @@ import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
 export async function getStaticPaths() {
-  const { regularPosts } = await getBlogListing("newest");
+  const { regularPosts } = await getBlogListing("oldest");
   const totalPages = Math.ceil(regularPosts.length / config.settings.pagination);
   const paths = [];
 
@@ -24,10 +24,11 @@ export async function getStaticPaths() {
   }
   return paths;
 }
+
 const blogIndex = (await getEntry("blog", "-index")) as CollectionEntry<"blog">;
 
 const { slug } = Astro.params;
-const { regularPosts } = await getBlogListing("newest");
+const { regularPosts } = await getBlogListing("oldest");
 const totalPages = Math.ceil(regularPosts.length / config.settings.pagination);
 const currentPage = slug && !isNaN(Number(slug)) ? Number(slug) : 1;
 const indexOfLastPost = currentPage * config.settings.pagination;
@@ -53,11 +54,11 @@ const page_data = {
   </section>
   <section class="section">
     <div class="container">
-      <BlogOrderToggle order="newest" />
+      <BlogOrderToggle order="oldest" />
       <h2 class="h4 mb-4">Blog Posts</h2>
       <Blog posts={currentPosts} />
       <Pagination
-        section={"blog"}
+        section={"blog/oldest"}
         totalPages={totalPages}
         currentPage={currentPage}
       />

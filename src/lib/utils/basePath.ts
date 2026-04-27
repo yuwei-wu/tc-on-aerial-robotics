@@ -16,7 +16,12 @@ export function withBasePath(path?: string) {
 
   const base = config.site.base_path || "/";
   const normalizedBase = base.endsWith("/") ? base : `${base}/`;
-  const normalizedPath = path.startsWith("/") ? path.slice(1) : path;
+  const [pathname, suffix = ""] = path.split(/([?#].*)/, 2);
+  const normalizedPath = pathname.startsWith("/") ? pathname.slice(1) : pathname;
+  const hasTrailingSlash = pathname.endsWith("/");
+  const hasFileExtension = /\.[^/]+$/.test(pathname.split("/").pop() || "");
+  const shouldAppendTrailingSlash =
+    normalizedPath !== "" && !hasTrailingSlash && !hasFileExtension;
 
-  return normalizedPath ? `${normalizedBase}${normalizedPath}` : normalizedBase;
+  return `${normalizedBase}${normalizedPath}${shouldAppendTrailingSlash ? "/" : ""}${suffix}`;
 }

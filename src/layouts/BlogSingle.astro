@@ -64,7 +64,7 @@ const { Content } = await render(post);
               {
                 post.data.categories.map((category, index) => (
                   <a
-                    href={withBasePath(`/categories/${slugify(category)}`)}
+                    href={withBasePath(`/categories/${slugify(category)}/`)}
                     class="hover:text-primary"
                   >
                     {humanize(category)}

@@ -1,0 +1,50 @@
+---
+import { withBasePath } from "@/lib/utils/basePath";
+
+type Card = {
+  alt: string;
+  caption: string;
+  src: string;
+};
+
+const {
+  bullets,
+  bulletsTitle,
+  cards,
+  intro,
+}: {
+  bullets: string[];
+  bulletsTitle: string;
+  cards: Card[];
+  intro: string;
+} = Astro.props;
+---
+
+<div class="content">
+  <p>{intro}</p>
+
+  <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    {
+      cards.map((card) => (
+        <figure class="rounded-xl bg-white p-4 shadow-lg">
+          <img
+            class="aspect-video w-full rounded-lg object-cover"
+            src={withBasePath(card.src)}
+            alt={card.alt}
+          />
+          <figcaption class="mt-3 text-sm text-text-dark">
+            {card.caption}
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+
+  <h2>{bulletsTitle}</h2>
+
+  <ul>
+    {bullets.map((bullet) => (
+      <li>{bullet}</li>
+    ))}
+  </ul>
+</div>

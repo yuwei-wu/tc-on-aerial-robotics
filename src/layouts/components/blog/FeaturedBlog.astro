@@ -32,14 +32,14 @@ const { posts } = Astro.props;
               {post.data.categories.map((category) => (
                 <a
                   class="tag"
-                  href={withBasePath(`/categories/${slugify(category)}`)}
+                  href={withBasePath(`/categories/${slugify(category)}/`)}
                 >
                   {humanize(category)}
                 </a>
               ))}
             </div>
             <h3 class="h4 card-title">
-              <a href={withBasePath(`/blog/${post.id}`)}>{post.data.title}</a>
+              <a href={withBasePath(`/blog/${post.id}/`)}>{post.data.title}</a>
             </h3>
             {post.body && (
               <p class="mb-4 text-text">

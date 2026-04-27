@@ -18,22 +18,22 @@
       "hasChildren": true,
       "children": [
         {
-          "name": "Aerial manipulation",
-          "url": "/"
+      "name": "Aerial manipulation",
+      "url": "/aerial-manipulation/"
         },
 
         {
           "name": "Fixed wing UAVs",
-          "url": "/"
+          "url": "/fixed-wing-uavs/"
         },
 
         {
           "name": "Rotary wing UAVs",
-          "url": "/"
+          "url": "/rotary-wing-uavs/"
         },
         {
           "name": "Applications",
-          "url": "/"
+          "url": "/applications/"
         }
       ]
     },

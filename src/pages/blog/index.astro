@@ -7,20 +7,17 @@ import FeaturedBlog from "@/components/blog/FeaturedBlog.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import Pagination from "@/layouts/components/Pagination.astro";
-import { getSinglePage } from "@/lib/contentParser.astro";
+import BlogOrderToggle from "@/layouts/components/blog/BlogOrderToggle.astro";
 import { getTaxonomy } from "@/lib/taxonomyParser.astro";
-import { sortByDate } from "@/lib/utils/sortFunctions";
+import { getBlogListing } from "@/lib/blogListing";
 import type { CollectionEntry } from "astro:content";
 import { getEntry } from "astro:content";
 
 const blogIndex = (await getEntry("blog", "-index")) as CollectionEntry<"blog">;
-const posts = await getSinglePage("blog");
 const categories = await getTaxonomy("blog", "categories");
-const sortedPosts = sortByDate(posts);
-const featuredPost = sortedPosts.filter((item) => item.data.featured);
-const recentPost = sortedPosts.filter((item) => !item.data.featured);
-const totalPages = Math.ceil(recentPost.length / config.settings.pagination);
-const currentPosts = recentPost.slice(0, config.settings.pagination);
+const { featuredPosts, regularPosts } = await getBlogListing("newest");
+const totalPages = Math.ceil(regularPosts.length / config.settings.pagination);
+const currentPosts = regularPosts.slice(0, config.settings.pagination);
 ---
 
 <Base
@@ -37,9 +34,10 @@ const currentPosts = recentPost.slice(0, config.settings.pagination);
   </section>
   <section class="section">
     <div class="container">
-      <FeaturedBlog posts={featuredPost} />
+      <BlogOrderToggle order="newest" />
+      <FeaturedBlog posts={featuredPosts} />
       <BlogCategories categories={categories} />
-      <h2 class="h4 mb-4">Recent News</h2>
+      <h2 class="h4 mb-4">Blog Posts</h2>
       <Blog posts={currentPosts} />
       <Pagination section={"blog"} currentPage={1} totalPages={totalPages} />
     </div>
