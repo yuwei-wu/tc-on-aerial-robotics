@@ -1,149 +1,179 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "title": {
-      "type": "string"
-    },
-    "meta_title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
-    "page_title": {
-      "type": "string"
-    },
-    "image": {
-      "type": "string"
-    },
-    "benefits": {
+  "$ref": "#/definitions/careers",
+  "definitions": {
+    "careers": {
       "type": "object",
       "properties": {
         "title": {
+          "type": "string"
+        },
+        "meta_title": {
           "type": "string"
         },
         "description": {
           "type": "string"
         },
-        "benefit_list": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "properties": {
-              "title": {
-                "type": "string"
-              },
-              "content": {
-                "type": "string"
-              },
-              "color": {
-                "type": "string"
-              },
-              "icon": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "title",
-              "content",
-              "color",
-              "icon"
-            ]
-          }
-        }
-      },
-      "required": [
-        "title",
-        "description",
-        "benefit_list"
-      ]
-    },
-    "sidebar_content": {
-      "type": "object",
-      "properties": {
-        "title": {
+        "page_title": {
           "type": "string"
         },
-        "content": {
+        "image": {
           "type": "string"
         },
-        "button": {
+        "benefits": {
           "type": "object",
           "properties": {
-            "label": {
+            "title": {
               "type": "string"
             },
-            "link": {
+            "description": {
               "type": "string"
             },
-            "enable": {
-              "default": true,
-              "type": "boolean"
+            "benefit_list": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "not": {}
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "title": {
+                        "type": "string"
+                      },
+                      "content": {
+                        "type": "string"
+                      },
+                      "color": {
+                        "type": "string"
+                      },
+                      "icon": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "title",
+                      "content",
+                      "color",
+                      "icon"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
             }
           },
           "required": [
-            "label",
-            "link"
+            "title",
+            "description",
+            "benefit_list"
+          ],
+          "additionalProperties": false
+        },
+        "sidebar_content": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "content": {
+              "type": "string"
+            },
+            "button": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "link": {
+                  "type": "string"
+                },
+                "enable": {
+                  "type": "boolean",
+                  "default": true
+                }
+              },
+              "required": [
+                "label",
+                "link"
+              ],
+              "additionalProperties": false
+            },
+            "enable": {
+              "type": "boolean",
+              "default": true
+            }
+          },
+          "required": [
+            "title",
+            "content",
+            "button"
+          ],
+          "additionalProperties": false
+        },
+        "career": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "subtitle": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "title",
+            "subtitle"
+          ],
+          "additionalProperties": false
+        },
+        "excerpt": {
+          "type": "string"
+        },
+        "job_nature": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "developer"
           ]
         },
-        "enable": {
-          "default": true,
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "title",
-        "content",
-        "button"
-      ]
-    },
-    "career": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
+        "date": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
         },
-        "subtitle": {
+        "draft": {
+          "type": "boolean",
+          "default": false
+        },
+        "$schema": {
           "type": "string"
         }
       },
       "required": [
-        "title",
-        "subtitle"
-      ]
-    },
-    "excerpt": {
-      "type": "string"
-    },
-    "job_nature": {
-      "type": "string"
-    },
-    "location": {
-      "type": "string"
-    },
-    "categories": {
-      "default": [
-        "developer"
+        "title"
       ],
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "date": {
-      "type": "string",
-      "format": "date-time"
-    },
-    "draft": {
-      "default": false,
-      "type": "boolean"
-    },
-    "$schema": {
-      "type": "string"
+      "additionalProperties": false
     }
   },
-  "required": [
-    "title"
-  ]
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }

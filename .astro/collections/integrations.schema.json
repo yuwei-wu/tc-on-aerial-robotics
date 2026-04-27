@@ -1,61 +1,68 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
-  "properties": {
-    "title": {
-      "type": "string"
-    },
-    "meta_title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
-    "page_title": {
-      "type": "string"
-    },
-    "name": {
-      "type": "string"
-    },
-    "excerpt": {
-      "type": "string"
-    },
-    "image": {
-      "type": "string"
-    },
-    "categories": {
-      "default": [
-        "social media"
-      ],
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "button": {
+  "$ref": "#/definitions/integrations",
+  "definitions": {
+    "integrations": {
       "type": "object",
       "properties": {
-        "label": {
+        "title": {
           "type": "string"
         },
-        "link": {
+        "meta_title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "page_title": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "excerpt": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "social media"
+          ]
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "label",
+            "link"
+          ],
+          "additionalProperties": false
+        },
+        "draft": {
+          "type": "boolean",
+          "default": false
+        },
+        "$schema": {
           "type": "string"
         }
       },
       "required": [
-        "label",
-        "link"
-      ]
-    },
-    "draft": {
-      "default": false,
-      "type": "boolean"
-    },
-    "$schema": {
-      "type": "string"
+        "title"
+      ],
+      "additionalProperties": false
     }
   },
-  "required": [
-    "title"
-  ]
+  "$schema": "http://json-schema.org/draft-07/schema#"
 }
