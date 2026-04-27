@@ -1,5 +1,6 @@
 ---
 import { humanize, slugify } from "@/lib/utils/textConverter";
+import { withBasePath } from "@/lib/utils/basePath";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
@@ -16,7 +17,9 @@ const params = Astro.params;
         class={`filter-btn ${
           !params.category ? "filter-btn-active" : undefined
         } btn btn-sm`}
-        href="/categories">All Categories</a
+        href={withBasePath("/categories")}
+      >
+        All Categories</a
       >
     </li>
     {
@@ -28,7 +31,7 @@ const params = Astro.params;
                 ? "filter-btn-active"
                 : undefined
             } btn btn-sm`}
-            href={`/categories/${slugify(category)}`}
+            href={withBasePath(`/categories/${slugify(category)}`)}
           >
             {humanize(category)}
           </a>

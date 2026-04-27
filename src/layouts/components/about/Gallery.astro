@@ -1,5 +1,6 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
+import { withBasePath } from "@/lib/utils/basePath";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
@@ -24,7 +25,7 @@ const { title, images } = gallery;
           images.map((image) => (
             <div class="picture-item col-6 mt-12">
               {" "}
-              <img class="w-full" src={image} alt="" />
+              <img class="w-full" src={withBasePath(image)} alt="" />
             </div>
           ))
         }
@@ -33,12 +34,12 @@ const { title, images } = gallery;
       </div>
       <img
         class="absolute -bottom-5 -left-5 -z-[1]"
-        src="images/shape-2.png"
+        src={withBasePath("/images/shape-2.png")}
         alt=""
       />
       <img
         class="absolute -right-5 bottom-20 -z-[1] h-16 w-16"
-        src="images/shape.png"
+        src={withBasePath("/images/shape.png")}
         alt=""
       />
     </div>

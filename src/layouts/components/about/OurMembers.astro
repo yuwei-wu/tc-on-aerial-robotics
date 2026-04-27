@@ -1,5 +1,6 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
+import { withBasePath } from "@/lib/utils/basePath";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
@@ -31,7 +32,7 @@ const {
                     height={220}
                     width={180}
                     class="h-56 w-44 object-cover"
-                    src={item.image}
+                    src={withBasePath(item.image)}
                     alt=""
                   />
                 </div>

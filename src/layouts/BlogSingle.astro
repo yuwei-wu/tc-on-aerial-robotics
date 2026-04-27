@@ -2,6 +2,7 @@
 import dateFormat from "@/lib/utils/dateFormat";
 import readingTime from "@/lib/utils/readingTime";
 
+import { withBasePath } from "@/lib/utils/basePath";
 import { humanize, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
@@ -27,7 +28,7 @@ const { Content } = await render(post);
       <div class="lg:col-10">
         <Image
           class="rounded-xl aspect-video object-contain"
-          src={post.data.image!}
+          src={withBasePath(post.data.image!)}
           alt={post.data.title}
           width={920}
           height={450}
@@ -63,7 +64,7 @@ const { Content } = await render(post);
               {
                 post.data.categories.map((category, index) => (
                   <a
-                    href={`/categories/${slugify(category)}`}
+                    href={withBasePath(`/categories/${slugify(category)}`)}
                     class="hover:text-primary"
                   >
                     {humanize(category)}

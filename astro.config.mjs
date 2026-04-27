@@ -42,7 +42,7 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
 
 export default defineConfig({
   site: "https://yuwei-wu.github.io/tc-on-aerial-robotics/",
-  base: "/",
+  base: "/tc-on-aerial-robotics/",
   trailingSlash: "always",
 
   vite: { plugins: [tailwindcss()] },

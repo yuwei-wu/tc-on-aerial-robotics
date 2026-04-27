@@ -1,5 +1,6 @@
 ---
 import { markdownify } from "@/lib/utils/textConverter";
+import { withBasePath } from "@/lib/utils/basePath";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
@@ -20,7 +21,7 @@ const {
       {
         button.enable && (
           <div class="mt-6 text-center md:col-3 md:mt-0 md:text-right">
-            <a class="btn btn-primary" href={button.link}>
+            <a class="btn btn-primary" href={withBasePath(button.link)}>
               {button.label}
             </a>
           </div>
@@ -39,7 +40,7 @@ const {
                 <Image
                   height={90}
                   width={90}
-                  src="/images/gradient-number-bg.png"
+                  src={withBasePath("/images/gradient-number-bg.png")}
                   alt=""
                 />
               </div>

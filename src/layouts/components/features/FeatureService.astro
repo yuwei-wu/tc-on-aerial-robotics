@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "@/lib/utils/basePath";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { AiFillCheckCircle } from "react-icons/ai";
@@ -16,7 +17,7 @@ const { feature_service } = Astro.props;
         height={354}
         width={476}
         class="w-full object-contain"
-        src={feature_service.image}
+        src={withBasePath(feature_service.image)}
         alt=""
       />
     </div>
@@ -46,7 +47,7 @@ const { feature_service } = Astro.props;
                 class={`btn m-3 ml-0 block sm:inline-block ${
                   button.outline ? "btn-outline-primary" : "btn-primary"
                 } `}
-                href={button.link}
+                href={withBasePath(button.link)}
               >
                 {button.label}
               </a>

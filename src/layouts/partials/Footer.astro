@@ -4,6 +4,7 @@ import Social from "@/components/Social.astro";
 import config from "@/config/config.json";
 import menu from "@/config/menu.json";
 import social from "@/config/social.json";
+import { withBasePath } from "@/lib/utils/basePath";
 import { markdownify } from "@/lib/utils/textConverter";
 const { footer } = menu;
 const { copyright, footer_description } = config.params;
@@ -29,7 +30,10 @@ const { copyright, footer_description } = config.params;
           {
             footer.map((item, i) => (
               <li class={footer.length - 1 === i ? "mb-0" : "mb-4"}>
-                <a class="hover:text-primary hover:underline " href={item.url}>
+                <a
+                  class="hover:text-primary hover:underline "
+                  href={withBasePath(item.url)}
+                >
                   {item.name}
                 </a>
               </li>

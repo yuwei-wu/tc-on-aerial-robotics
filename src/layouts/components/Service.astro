@@ -1,6 +1,7 @@
 ---
 import InterestGroups from "@/layouts/components/InterestGroups.astro";
 import VideoComponent from "@/layouts/function-components/VideoComponent";
+import { withBasePath } from "@/lib/utils/basePath";
 import { markdownify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
@@ -55,7 +56,7 @@ const isRemoteImage = (src?: string) => src?.startsWith("http");
                         alt={item.title}
                         width={667}
                         height={498}
-                        src={item.image}
+                        src={withBasePath(item.image)}
                       />
                     )
                   }
@@ -73,14 +74,14 @@ const isRemoteImage = (src?: string) => src?.startsWith("http");
                           alt={`${item.title} secondary`}
                           width={667}
                           height={498}
-                          src={item.image_secondary}
+                          src={withBasePath(item.image_secondary)}
                         />
                       ))
                   }
                 </div>
                 <Image
                   class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
-                  src="/images/shape-2.png"
+                  src={withBasePath("/images/shape-2.png")}
                   alt=""
                   height={147}
                   width={151}
@@ -111,7 +112,7 @@ const isRemoteImage = (src?: string) => src?.startsWith("http");
                 <p class="mt-4" set:html={markdownify(item.description)} />
               )}
               {item.button && item.button.enable && (
-                <a class="btn btn-white mt-6" href={item.button.link}>
+                <a class="btn btn-white mt-6" href={withBasePath(item.button.link)}>
                   {item.button.label}
                 </a>
               )}

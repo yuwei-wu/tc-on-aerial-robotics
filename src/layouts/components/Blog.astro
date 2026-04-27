@@ -1,6 +1,7 @@
 ---
 import config from "@/config/config.json";
 import dateFormat from "@/lib/utils/dateFormat";
+import { withBasePath } from "@/lib/utils/basePath";
 import readingTime from "@/lib/utils/readingTime";
 import { humanize, plainify, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
@@ -22,19 +23,22 @@ const { posts } = Astro.props;
             class="card-img aspect-video"
             width={335}
             height={210}
-            src={item.data.image!}
+            src={withBasePath(item.data.image!)}
             alt=""
           />
           <div class="card-content">
             <div class="card-tags space-x-1">
               {item.data.categories.map((category) => (
-                <a class="tag" href={`/categories/${slugify(category)}`}>
+                <a
+                  class="tag"
+                  href={withBasePath(`/categories/${slugify(category)}`)}
+                >
                   {humanize(category)}
                 </a>
               ))}
             </div>
             <h3 class="h4 card-title">
-              <a href={`/blog/${item.id}`}>{item.data.title}</a>
+              <a href={withBasePath(`/blog/${item.id}`)}>{item.data.title}</a>
             </h3>
 
             {item.body && (

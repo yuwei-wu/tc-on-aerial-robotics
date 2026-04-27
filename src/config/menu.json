@@ -6,11 +6,11 @@
     },
     {
       "name": "Chairs",
-      "url": "/about"
+      "url": "/about/"
     },
     {
       "name": "News",
-      "url": "/blog"
+      "url": "/blog/"
     },
     {
       "name": "Aerial robots and UAVs",
@@ -24,29 +24,29 @@
 
         {
           "name": "Fixed wing UAVs",
-          "url": "/integrations"
+          "url": "/"
         },
 
         {
           "name": "Rotary wing UAVs",
-          "url": "/integrations"
+          "url": "/"
         },
         {
           "name": "Applications",
-          "url": "/elements"
+          "url": "/"
         }
       ]
     },
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact/"
     }
   ],
 
   "footer": [
     {
       "name": "Contact",
-      "url": "/contact"
+      "url": "/contact/"
     },
     {
       "name": "Become a TC member",

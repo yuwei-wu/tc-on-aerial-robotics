@@ -553,7 +553,8 @@ select:invalid {
 
 .blockquote blockquote p::after,
 .blockquote blockquote p::before {
-  @apply absolute h-6 w-6 bg-[url("/images/icons/quote.svg")] bg-contain bg-no-repeat content-[''];
+  background-image: var(--quote-icon-url);
+  @apply absolute h-6 w-6 bg-contain bg-no-repeat content-[''];
 }
 
 .blockquote blockquote p::before {

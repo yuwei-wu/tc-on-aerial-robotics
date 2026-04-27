@@ -1,4 +1,5 @@
 import { humanize } from "@/lib/utils/textConverter";
+import { withBasePath } from "@/lib/utils/basePath";
 import { marked } from "marked";
 import { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -88,7 +89,7 @@ const JobPosts = ({ posts, categories, career }) => {
                   <li className="my-1 mr-8">
                     <a
                       className="inline-flex items-center font-semibold text-primary"
-                      href={`/careers/${post.id}`}
+                      href={withBasePath(`/careers/${post.id}`)}
                     >
                       Read More
                       <AiOutlineArrowRight className="ml-1.5 text-xl font-bold" />

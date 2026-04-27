@@ -1,5 +1,6 @@
 ---
 import config from "@/config/config.json";
+import { withBasePath } from "@/lib/utils/basePath";
 import { Image } from "astro:assets";
 const { src } = Astro.props;
 const {
@@ -17,13 +18,13 @@ const {
 } = config.site;
 ---
 
-<a href="/" class="navbar-brand block">
+<a href={withBasePath("/")} class="navbar-brand block">
   {
     src || logo ? (
       <Image
         width={logo_width.replace("px", "") * 2}
         height={logo_height.replace("px", "") * 2}
-        src={src ? src : logo}
+        src={withBasePath(src ? src : logo)}
         alt={title}
         style={{
           height: logo_height.replace("px", "") + "px",

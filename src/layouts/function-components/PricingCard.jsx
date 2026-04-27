@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/utils/basePath";
 import DynamicIcon from "@/helpers/DynamicIcon";
 
 const PricingCard = ({ item }) => {
@@ -57,13 +58,13 @@ const PricingCard = ({ item }) => {
             className={`btn ${
               item.featured ? "btn-primary" : "btn-outline-white"
             } block h-12 w-full rounded-[50px] leading-7.5`}
-            href={item.buttons.buy_now.link}
+            href={withBasePath(item.buttons.buy_now.link)}
           >
             {item.buttons.buy_now.label}
           </a>
           <a
             className="mt-6 inline-flex items-center text-text-dark"
-            href={item.buttons.free_trial.link}
+            href={withBasePath(item.buttons.free_trial.link)}
           >
             {item.buttons.free_trial.label}
             <svg

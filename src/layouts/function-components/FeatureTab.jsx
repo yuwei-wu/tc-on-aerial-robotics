@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/utils/basePath";
 import { marked } from "marked";
 import { useState } from "react";
 
@@ -20,7 +21,7 @@ const FeatureTab = ({ feature_tab }) => {
               tab === index ? "active" : undefined
             } relative`}
           >
-            <img className="w-full object-contain" src={item.image} />
+            <img className="w-full object-contain" src={withBasePath(item.image)} />
           </div>
         ))}
       </div>

@@ -1,4 +1,5 @@
 ---
+import { withBasePath } from "@/lib/utils/basePath";
 import type { CollectionEntry } from "astro:content";
 import { AiOutlineArrowRight } from "react-icons/ai";
 
@@ -17,7 +18,7 @@ const { posts, sidebar_content } = Astro.props;
         <p class="mt-4">{sidebar_content.content}</p>
         <a
           class="btn btn-primary mt-6 block w-full"
-          href={sidebar_content.button.link}
+          href={withBasePath(sidebar_content.button.link)}
         >
           {sidebar_content.button.label}
         </a>
@@ -66,7 +67,7 @@ const { posts, sidebar_content } = Astro.props;
           <li class="my-1 mr-8">
             <a
               class="text-primary inline-flex items-center font-semibold"
-              href={`/careers/${item.id}`}
+              href={withBasePath(`/careers/${item.id}`)}
             >
               Read More
               <AiOutlineArrowRight className="ml-1.5 text-xl font-bold" />

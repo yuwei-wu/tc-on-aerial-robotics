@@ -1,4 +1,5 @@
 import { humanize } from "@/lib/utils/textConverter";
+import { withBasePath } from "@/lib/utils/basePath";
 import { marked } from "marked";
 import React, { useState } from "react";
 import { AiOutlineArrowRight } from "react-icons/ai";
@@ -46,7 +47,7 @@ const IntegrateMedia = ({ integrations, categories }) => {
             >
               <div className="rounded-xl bg-white px-10 pb-8 pt-11 shadow-lg">
                 <div className="integration-card-head flex items-center space-x-4">
-                  <img src={item.data.image} alt="" />
+                  <img src={withBasePath(item.data.image)} alt="" />
                   <div>
                     <h4 className="h4">{humanize(item.data.name)}</h4>
                     {item.data.categories.map((category, i) => (
@@ -68,7 +69,7 @@ const IntegrateMedia = ({ integrations, categories }) => {
 
                 <a
                   className="group inline-flex items-center font-semibold text-text-dark hover:text-primary"
-                  href={`/integrations/${item.id}`}
+                  href={withBasePath(`/integrations/${item.id}`)}
                 >
                   View integration
                   <AiOutlineArrowRight className="ml-1.5 text-xl font-bold duration-300 group-hover:ml-3" />

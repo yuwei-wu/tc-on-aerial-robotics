@@ -1,4 +1,5 @@
 import { markdownify } from "@/lib/utils/textConverter";
+import { withBasePath } from "@/lib/utils/basePath";
 
 const ContentBlock = ({
   title,
@@ -26,7 +27,7 @@ const ContentBlock = ({
               <p className="text-[.9rem] text-text">{children}</p>
             </div>
             {button_label && (
-              <a href={button_link} className="btn btn-primary">
+              <a href={withBasePath(button_link)} className="btn btn-primary">
                 {button_label}
               </a>
             )}
@@ -37,7 +38,7 @@ const ContentBlock = ({
             }`}
           >
             <img
-              src={image}
+              src={withBasePath(image)}
               alt={title}
               height={320}
               width={527}

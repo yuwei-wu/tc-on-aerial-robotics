@@ -2,7 +2,7 @@
   "site": {
     "title": "IEEE Aerial Robotics and UAVs",
     "base_url": "https://yuwei-wu.github.io/tc-on-aerial-robotics/",
-    "base_path": "/",
+    "base_path": "/tc-on-aerial-robotics/",
     "trailing_slash": false,
     "favicon": "/images/favicon.png",
     "logo": "/images/logo.png",
