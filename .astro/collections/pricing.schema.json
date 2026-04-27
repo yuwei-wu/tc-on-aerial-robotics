@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "page_title": {
+      "type": "string"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "pricing_card": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "pre_currency": {
+            "type": "string"
+          },
+          "post_currency": {
+            "type": "string"
+          },
+          "price": {
+            "type": "number"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "featured": {
+            "default": false,
+            "type": "boolean"
+          },
+          "buttons": {
+            "type": "object",
+            "properties": {
+              "buy_now": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label",
+                  "link"
+                ],
+                "additionalProperties": false
+              },
+              "free_trial": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "label",
+                  "link"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "buy_now",
+              "free_trial"
+            ],
+            "additionalProperties": false
+          },
+          "services": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "list": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "title",
+              "list"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "title",
+          "pre_currency",
+          "post_currency",
+          "price",
+          "icon",
+          "description",
+          "featured",
+          "buttons",
+          "services"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "faq": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "faq_list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "content"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "faq_list"
+      ],
+      "additionalProperties": false
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "page_title",
+    "pricing_card",
+    "faq"
+  ],
+  "additionalProperties": false
+}

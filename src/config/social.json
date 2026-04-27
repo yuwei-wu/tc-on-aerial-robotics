@@ -1,0 +1,14 @@
+{
+  "main": [
+    {
+      "name": "LinkedIn",
+      "icon": "FiLinkedin",
+      "link": "https://www.linkedin.com/"
+    },
+    {
+      "name": "YouTube",
+      "icon": "FiYoutube",
+      "link": "https://www.youtube.com/"
+    }
+  ]
+}

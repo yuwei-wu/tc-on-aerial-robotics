@@ -1,0 +1,133 @@
+---
+import InterestGroups from "@/layouts/components/InterestGroups.astro";
+import VideoComponent from "@/layouts/function-components/VideoComponent";
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+type Props = {
+  service: CollectionEntry<"homepage">["data"]["service"];
+};
+const { service } = Astro.props;
+const { homepage_tab, our_scope } = service;
+const isRemoteImage = (src?: string) => src?.startsWith("http");
+---
+
+<section class="section services">
+  <div class="container">
+    {
+      our_scope.map((item, index) => (
+        <div
+          class={`gx-5 row items-center ${
+            index === 0
+              ? "mt-12 lg:mt-0"
+              : "mt-12 border-t border-border pt-12 lg:mt-10"
+          }`}
+        >
+          <div class={`lg:col-7 ${index % 2 === 0 ? "order-0" : "order-1"}`}>
+            {item.image && (
+              <div class="relative">
+                <div
+                  class={`mx-auto gap-4 ${
+                    item.image_secondary
+                      ? "grid grid-cols-2 max-w-[640px]"
+                      : "grid grid-cols-1"
+                  }`}
+                >
+                  {
+                    isRemoteImage(item.image) ? (
+                      <img
+                        class={`mx-auto w-full rounded-lg object-cover ${
+                          item.image_secondary
+                            ? "h-48"
+                            : item.image_width ?? "w-full"
+                        }`}
+                        alt={item.title}
+                        src={item.image}
+                      />
+                    ) : (
+                      <Image
+                        class={`mx-auto rounded-lg object-contain ${
+                          item.image_secondary
+                            ? "h-48 w-full"
+                            : item.image_width ?? "w-full"
+                        }`}
+                        alt={item.title}
+                        width={667}
+                        height={498}
+                        src={item.image}
+                      />
+                    )
+                  }
+                  {
+                    item.image_secondary &&
+                      (isRemoteImage(item.image_secondary) ? (
+                        <img
+                          class="h-48 w-full rounded-lg object-cover"
+                          alt={`${item.title} secondary`}
+                          src={item.image_secondary}
+                        />
+                      ) : (
+                        <Image
+                          class="h-48 w-full rounded-lg object-contain"
+                          alt={`${item.title} secondary`}
+                          width={667}
+                          height={498}
+                          src={item.image_secondary}
+                        />
+                      ))
+                  }
+                </div>
+                <Image
+                  class="absolute bottom-6 left-1/2 -z-[1] -translate-x-1/2"
+                  src="/images/shape-2.png"
+                  alt=""
+                  height={147}
+                  width={151}
+                />
+              </div>
+            )}
+            {item.video && (
+              <VideoComponent
+                client:load
+                src={item.video.thumbnail}
+                height={370}
+                width={700}
+                title={item.title}
+                video_id={item.video.video_id}
+                video_width="w-[700px]"
+                video_height="h-[370px]"
+              />
+            )}
+          </div>
+          <div
+            class={`mt-6 lg:col-5 lg:mt-0 ${
+              index % 2 === 0 ? "order-1" : "order-0"
+            }`}
+          >
+            <div class="text-container">
+              <h2 class="lg:text-4xl" set:html={markdownify(item.title)} />
+              {item.description && (
+                <p class="mt-4" set:html={markdownify(item.description)} />
+              )}
+              {item.button && item.button.enable && (
+                <a class="btn btn-white mt-6" href={item.button.link}>
+                  {item.button.label}
+                </a>
+              )}
+              <ul class="mt-6 list-disc text-text-dark lg:ml-2">
+                {item.list &&
+                  item.list.map((list) => (
+                    <li class="mb-2">
+                      {list}
+                    </li>
+                  ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+    <InterestGroups homepage_tab={homepage_tab} />
+  </div>
+</section>

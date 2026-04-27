@@ -1,0 +1,35 @@
+{
+  "site": {
+    "title": "IEEE Aerial Robotics and UAVs",
+    "base_url": "https://ieee-aerialrobotics-uavs.org/",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "140",
+    "logo_height": "80",
+    "logo_text": "AR&UAV"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100
+  },
+
+  "google_tag_manager": {
+    "enable": false,
+    "gtm_id": "GTM-XXXXXX"
+  },
+
+  "params": {
+    "footer_description": "Aerial Robotics and Unmanned Aerial Vehicles, IEEE Robotics and Automation Technical Committee",
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2026 IEEE Aerial Robotics and UAVs, theme by [Themefisher](https://themefisher.com)"
+  },
+
+  "metadata": {
+    "meta_author": "Themefisher",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "pinwheel astro"
+  }
+}

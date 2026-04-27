@@ -1,0 +1,42 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+const { banner } = Astro.props;
+const { title, button, image, content } = banner;
+---
+
+<section
+  class="section banner relative overflow-hidden bg-cover bg-center bg-no-repeat"
+  style={`background-image: linear-gradient(rgba(18, 24, 38, 0.72), rgba(18, 24, 38, 0.72)), url(${image});`}
+>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="max-w-[980px] py-12 lg:py-20">
+          <h1
+            class="banner-title text-white"
+            set:html={markdownify(title)}
+          />
+
+          <p class="mt-6 max-w-[900px] text-white/90" set:html={markdownify(content)} />
+
+          {
+            button.enable && (
+              <a class="btn btn-white mt-8" href={button.link}>
+                {button.label}
+              </a>
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <Image
+    class="banner-shape absolute -top-28 right-0 -z-[1] w-full max-w-[30%]"
+    alt="banner"
+    src="/images/banner-shape.png"
+    width={496}
+    height={466}
+  />
+</section>

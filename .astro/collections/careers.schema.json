@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "page_title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "benefits": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "benefit_list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              },
+              "color": {
+                "type": "string"
+              },
+              "icon": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "content",
+              "color",
+              "icon"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "benefit_list"
+      ],
+      "additionalProperties": false
+    },
+    "sidebar_content": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string"
+            },
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "label",
+            "link",
+            "enable"
+          ],
+          "additionalProperties": false
+        },
+        "enable": {
+          "default": true,
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "title",
+        "content",
+        "button",
+        "enable"
+      ],
+      "additionalProperties": false
+    },
+    "career": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "subtitle"
+      ],
+      "additionalProperties": false
+    },
+    "excerpt": {
+      "type": "string"
+    },
+    "job_nature": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "categories": {
+      "default": [
+        "developer"
+      ],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "draft": {
+      "default": false,
+      "type": "boolean"
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "categories",
+    "draft"
+  ],
+  "additionalProperties": false
+}

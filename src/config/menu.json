@@ -1,0 +1,56 @@
+{
+  "main": [
+    {
+      "name": "Home",
+      "url": "/"
+    },
+    {
+      "name": "Chairs",
+      "url": "/about"
+    },
+    {
+      "name": "News",
+      "url": "/blog"
+    },
+    {
+      "name": "Aerial robots and UAVs",
+      "url": "",
+      "hasChildren": true,
+      "children": [
+        {
+          "name": "Aerial manipulation",
+          "url": "/"
+        },
+
+        {
+          "name": "Fixed wing UAVs",
+          "url": "/integrations"
+        },
+
+        {
+          "name": "Rotary wing UAVs",
+          "url": "/integrations"
+        },
+        {
+          "name": "Applications",
+          "url": "/elements"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "url": "/contact"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "Contact",
+      "url": "/contact"
+    },
+    {
+      "name": "Become a TC member",
+      "url": "https://www.ieee.org/membership-catalog/productdetail/showProductDetailPage.html?product=CMYRAS012"
+    }
+  ]
+}

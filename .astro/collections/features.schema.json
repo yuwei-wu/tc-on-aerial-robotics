@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "banner": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string"
+            },
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "label",
+            "link",
+            "enable"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "title",
+        "content",
+        "image"
+      ],
+      "additionalProperties": false
+    },
+    "project_management": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "management": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "projects": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "icon": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "content",
+                  "icon"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "additionalProperties": false
+        },
+        "feature_service": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "image": {
+              "type": "string"
+            },
+            "list": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "buttons": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "link": {
+                    "type": "string"
+                  },
+                  "enable": {
+                    "default": true,
+                    "type": "boolean"
+                  },
+                  "outline": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "label",
+                  "link",
+                  "enable"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "description",
+            "image",
+            "buttons"
+          ],
+          "additionalProperties": false
+        },
+        "feature_tab": {
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string"
+            },
+            "list": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "content": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "title",
+                  "content",
+                  "image"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "title",
+        "content",
+        "management",
+        "feature_service",
+        "feature_tab"
+      ],
+      "additionalProperties": false
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "banner",
+    "project_management"
+  ],
+  "additionalProperties": false
+}

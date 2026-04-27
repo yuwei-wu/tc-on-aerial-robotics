@@ -1,0 +1,210 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "page_title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "buttons": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "link": {
+            "type": "string"
+          },
+          "outline": {
+            "type": "boolean"
+          },
+          "enable": {
+            "default": true,
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "label",
+          "link",
+          "enable"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "counter": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "number": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              }
+            ]
+          },
+          "measurement": {
+            "type": "string"
+          },
+          "color": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "number",
+          "measurement",
+          "color"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "gallery": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "title",
+        "images"
+      ],
+      "additionalProperties": false
+    },
+    "features": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "button": {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "link": {
+              "type": "string"
+            },
+            "enable": {
+              "default": true,
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "label",
+            "link",
+            "enable"
+          ],
+          "additionalProperties": false
+        },
+        "features_list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "content"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "title",
+        "button",
+        "features_list"
+      ],
+      "additionalProperties": false
+    },
+    "members": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "member_list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "field": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "webpage": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "field",
+              "image"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "title",
+        "description",
+        "member_list"
+      ],
+      "additionalProperties": false
+    },
+    "$schema": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "page_title",
+    "members"
+  ],
+  "additionalProperties": false
+}

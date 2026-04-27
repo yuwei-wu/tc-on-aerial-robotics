@@ -1,0 +1,43 @@
+---
+title: "Chairs"
+page_title: "Chairs"
+meta_title: "IEEE Aerial Robotics and UAVs Chairs"
+image: ""
+
+members:
+  title: ""
+  description: ""
+  member_list:
+    - name: "Aníbal Ollero"
+      field: "University of Seville - GRVC Robotics Lab"
+      email: "aollero@us.es"
+      webpage: "https://grvc.us.es/aollero/"
+      image: "/images/chairs/AnibalOllero1-e1727338570649.png"
+    - name: "Giuseppe Loianno"
+      field: "University of California, Berkeley"
+      email: "loiannog@berkeley.edu"
+      webpage: "https://www2.eecs.berkeley.edu/Faculty/Homepages/loianno.html"
+      image: "/images/chairs/Loianno-e1741018406602.jpg"
+    - name: "Marco Tognon"
+      field: "Inria researcher (ISFP) at INRIA Rennes"
+      email: "marco.tognon@inria.fr"
+      webpage: "https://mtognon.aslethz.cyon.site/"
+      image: "/images/chairs/2020_Marco_Tognon_3-1-e1757064063273.jpg"
+    - name: "Begoña C. Arrue"
+      field: "University of Seville - Interuniversity Institute of Robotics and Intelligent Systems (RIS) and GRVC"
+      email: "barrue@us.es"
+      webpage: "https://grvc.us.es/"
+      image: "/images/chairs/IMG_1502-scaled-e1757065079392-732x1024-1.jpeg"
+    - name: "Raphael Zufferey"
+      field: "MIT Mechanical Engineering and MIT AURA lab"
+      email: "raphz@mit.edu"
+      webpage: "https://aura.mit.edu/"
+      image: "/images/chairs/Imagen4-e1757064024875.jpg"
+    - name: "Hyunchul Shim"
+      field: "Korea Advanced Institute of Science and Technology (KAIST)"
+      email: "hcshim@kaist.ac.kr"
+      webpage: "https://aerospace.snu.ac.kr/"
+      image: "/images/chairs/hcshim2-e1757064737253.jpg"
+---
+
+Meet the chairs of the IEEE Aerial Robotics and UAVs technical committee.
