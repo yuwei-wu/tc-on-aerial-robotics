@@ -16,13 +16,13 @@
     "preview:cf-workers": "npm run build && wrangler dev"
   },
   "dependencies": {
-    "@astrojs/check": "0.9.7",
+    "@astrojs/check": "0.9.4",
     "@astrojs/mdx": "4.3.14",
-    "@astrojs/react": "5.0.0",
+    "@astrojs/react": "4.2.1",
     "@astrojs/sitemap": "3.7.1",
     "@digi4care/astro-google-tagmanager": "^1.6.0",
     "@justinribeiro/lite-youtube": "^1.8.2",
-    "astro": "6.1.2",
+    "astro": "5.18.1",
     "astro-auto-import": "^0.4.5",
     "astro-swiper": "^2.2.1",
     "date-fns": "^4.1.0",
