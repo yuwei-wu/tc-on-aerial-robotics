@@ -41,12 +41,12 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
   });
 
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
-  base: config.site.base_path ? config.site.base_path : "/",
-  trailingSlash: config.site.trailing_slash ? "always" : "never",
+  site: "https://yuwei-wu.github.io",
+  base: "/tc-on-aerial-robotics/",
+  trailingSlash: "always",
+
   vite: { plugins: [tailwindcss()] },
 
-  // Moved from top-level to experimental
   experimental: {
     fonts: fontsConfig,
   },
