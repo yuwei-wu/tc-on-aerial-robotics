@@ -21,9 +21,9 @@ const { posts } = Astro.props;
       <div class="mb-8 col-12">
         <div class="card">
           <Image
-            class="card-img"
-            width={235}
-            height={304}
+            class="card-img rounded-none object-cover object-center"
+            width={200}
+            height={260}
             src={withBasePath(post.data.image!)}
             alt={post.data.title}
           />

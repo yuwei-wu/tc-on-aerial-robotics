@@ -1,7 +1,7 @@
 ---
-title: Upcoming of ICUAS 2020
+title: ICUAS 2020
 subtitle: The 2020 International Conference on Unmanned Aircraft Systems
-image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYX7gkypjWJZQrWmlyqHhHaDYTCq8VyQBRzg&s"
+image: "https://www.eaap.net/images/large/6405.jpg"
 author: grvcwebadmin
 date: 9 September, 2019
 categories: ["conference"]

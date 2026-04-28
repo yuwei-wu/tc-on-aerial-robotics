@@ -211,6 +211,11 @@ select:invalid {
   @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px];
   @apply marker:text-primary;
   @apply prose-img:rounded-md;
+
+  img {
+    @apply h-auto max-w-[95%];
+  }
+
   .btn {
     p {
       @apply m-0 text-white;
@@ -428,7 +433,7 @@ select:invalid {
 }
 
 .featured-posts .card-img {
-  @apply max-h-[210px] w-full self-stretch rounded-md object-cover lg:max-h-full lg:max-w-[40%] xl:max-w-[235px];
+  @apply max-h-[170px] w-full self-stretch object-cover lg:max-h-full lg:max-w-[35%] xl:max-w-[200px];
 }
 
 .featured-posts .card-title {

@@ -27,7 +27,7 @@ const { Content } = await render(post);
     <div class="row justify-center">
       <div class="lg:col-10">
         <Image
-          class="rounded-xl aspect-video object-contain"
+          class="h-auto w-full max-w-[95%] rounded-xl aspect-video object-cover object-center"
           src={withBasePath(post.data.image!)}
           alt={post.data.title}
           width={920}
