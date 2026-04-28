@@ -24,7 +24,7 @@ image: ""
 
   <figure class="rounded-xl bg-white p-4 shadow-lg">
     <img class="aspect-video w-full rounded-lg object-cover" src="../images/aerial/Grasping-Approaching-signed.jpg" alt="Grasping operations by a drone with robotic arms" />
-    <figcaption class="mt-3 text-sm text-text-dark">Grasping operations by a drone with robotic arms from the GRVC-Univ. Sevilla AEROARMS project.</figcaption>
+    <figcaption class="mt-3 text-sm text-text-dark">Grasping operations by the drone with robotic arms from GRVC-Univ. Sevilla in H2020 AEROARMS project.</figcaption>
   </figure>
 
   <figure class="rounded-xl bg-white p-4 shadow-lg">
