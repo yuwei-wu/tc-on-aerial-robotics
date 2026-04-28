@@ -1,8 +1,20 @@
 ---
 import { withBasePath } from "@/lib/utils/basePath";
 
-const { order } = Astro.props;
+const { order, section = "blog" } = Astro.props;
+const category = Astro.params.category;
 const isNewest = order === "newest";
+const isCategories = section === "categories";
+const newestHref = isCategories
+  ? category
+    ? `/categories/${category}/`
+    : "/categories/"
+  : "/blog/";
+const oldestHref = isCategories
+  ? category
+    ? `/categories/oldest/${category}/`
+    : "/categories/oldest/"
+  : "/blog/oldest/";
 ---
 
 <div class="mb-6 flex flex-wrap items-center gap-3">
@@ -15,7 +27,7 @@ const isNewest = order === "newest";
     ) : (
       <a
         class="btn btn-outline-primary btn-sm inline-flex items-center justify-center no-underline"
-        href={withBasePath("/blog/")}
+        href={withBasePath(newestHref)}
       >
         Newest first
       </a>
@@ -29,7 +41,7 @@ const isNewest = order === "newest";
     ) : (
       <a
         class="btn btn-outline-primary btn-sm inline-flex items-center justify-center no-underline"
-        href={withBasePath("/blog/oldest/")}
+        href={withBasePath(oldestHref)}
       >
         Oldest first
       </a>

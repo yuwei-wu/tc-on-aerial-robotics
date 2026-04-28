@@ -551,20 +551,6 @@ select:invalid {
   @apply relative border-none p-0 not-italic;
 }
 
-.blockquote blockquote p::after,
-.blockquote blockquote p::before {
-  background-image: var(--quote-icon-url);
-  @apply absolute h-6 w-6 bg-contain bg-no-repeat content-[''];
-}
-
-.blockquote blockquote p::before {
-  @apply -left-4 top-0 -translate-x-full;
-}
-
-.blockquote blockquote p::after {
-  @apply -right-4 bottom-0 translate-x-full rotate-180;
-}
-
 /* comment form */
 .comment-form {
   input[type="text"],

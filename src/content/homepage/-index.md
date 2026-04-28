@@ -1,12 +1,12 @@
 ---
 banner:
-  title: "IEEE Aerial Robotics and UAVs"
-  content: "Flying robots create new opportunities for services and missions such as search and rescue, observation, mapping, inspection, and maintenance. The technical committee brings together the aerial robotics community around the design, autonomy, control, and coordination of UAV systems."
+  title: "IEEE RAS TC on Aerial Robotics and UAVs"
+  content: ""
   image: "/images/banner-img.png"
   button:
     enable: true
-    label: "Join the TC List"
-    link: "/contact"
+    label: "ICRA 2026 Workshop on Aerial Robotics"
+    link: "https://aerial-robotics-workshop-icra.com/"
 service:
   our_scope:
     - title: "Scope"
@@ -14,12 +14,8 @@ service:
       image: "/images/Imagen-1-1.png"
       image_width: "w-[90%]"
     - title: "Objective"
-      description: "The technical committee will promote exchanges among researchers from academia, industry, and government. The purpose is to identify the technologies and technical approaches needed to advance and mature the field of aerial robotics."
+      description: "The technical committee will promote exchanges among researchers from academia, industry and government. The purpose is to identify the technologies and technical approaches to advance and mature the field of aerial robotics. Exchanges include conferences, workshops, special sessions in conferences and publications to promote discussion on technical and applicative problems. Envisioned will be on-line and printed resources to disseminate knowledge including cross-disciplinary information like aerodynamics, propulsion, communications, controls and sensors."
       image: "/images/Imagen-3-e1539859865849.png"
-      list:
-        - "Promote discussion through conferences, workshops, special sessions, and publications"
-        - "Connect researchers and practitioners across academia, industry, and government"
-        - "Disseminate cross-disciplinary knowledge in aerodynamics, propulsion, communications, controls, and sensors"
     - title: "Topics of Interest"
       description: "Include but not limited to:"
       image: "/images/Imagen-4.png"

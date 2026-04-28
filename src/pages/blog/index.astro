@@ -7,7 +7,6 @@ import FeaturedBlog from "@/components/blog/FeaturedBlog.astro";
 import config from "@/config/config.json";
 import Base from "@/layouts/Base.astro";
 import Pagination from "@/layouts/components/Pagination.astro";
-import BlogOrderToggle from "@/layouts/components/blog/BlogOrderToggle.astro";
 import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import { getBlogListing } from "@/lib/blogListing";
 import type { CollectionEntry } from "astro:content";
@@ -34,7 +33,6 @@ const currentPosts = regularPosts.slice(0, config.settings.pagination);
   </section>
   <section class="section">
     <div class="container">
-      <BlogOrderToggle order="newest" />
       <FeaturedBlog posts={featuredPosts} />
       <BlogCategories categories={categories} />
       <h2 class="h4 mb-4">Blog Posts</h2>

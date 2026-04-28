@@ -1,10 +1,10 @@
 ---
 import Blog from "@/components/Blog.astro";
 import BlogCategories from "@/components/blog/BlogCategories.astro";
+import BlogOrderToggle from "@/layouts/components/blog/BlogOrderToggle.astro";
 import PageHeader from "@/components/PageHeader.astro";
 import Shape from "@/components/Shape.astro";
 import Base from "@/layouts/Base.astro";
-import BlogOrderToggle from "@/layouts/components/blog/BlogOrderToggle.astro";
 import { getSinglePage } from "@/lib/contentParser.astro";
 import { getTaxonomy } from "@/lib/taxonomyParser.astro";
 import taxonomyFilter from "@/lib/utils/taxonomyFilter";
@@ -28,7 +28,7 @@ export async function getStaticPaths() {
 const { category } = Astro.params;
 const { item } = Astro.props;
 
-const posts = sortByDate(await getSinglePage("blog"), "desc");
+const posts = sortByDate(await getSinglePage("blog"), "asc");
 const filterByTags = taxonomyFilter(posts, "categories", category);
 const page_data = {
   index_title: "Categories",
@@ -50,7 +50,7 @@ const page_data = {
   </section>
   <section class="section">
     <div class="container">
-      <BlogOrderToggle order="newest" section="categories" />
+      <BlogOrderToggle order="oldest" section="categories" />
       <BlogCategories categories={categories} />
       <Blog posts={filterByTags} />
     </div>
