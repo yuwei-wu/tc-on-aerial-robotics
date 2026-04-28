@@ -21,7 +21,7 @@ service:
       image: "/images/Imagen-4.png"
       list:
         - "Airframe design"
-        - "UAS autonomy, perception, planning and control"
+        - "UAS autonomy: perception, planning and control"
         - "UAS guidance, navigation and control"
         - "Sense and avoid"
         - "Human-computer interfaces"
@@ -44,15 +44,15 @@ service:
     description: ""
     tab_list:
       - title: "IG1: Unmanned aerial systems"
-        content: "This interest group emphasizes unmanned aerial vehicles from large platforms to small vehicles and a large variety of systems and applications."
+        content: "This interest group emphasizes unmanned aerial vehicles from large platforms until small  vehicles and a large variety of systems and applications."
         icon: "FiLock"
         image: "/images/sells-by-country.png"
-      - title: "IG2: Aerial interaction"
+      - title: "IG2: Aerial robotic systems physically interacting with the environment"
         content: "This interest group focalizes on the methods and technologies required for the development of aerial robots physically interacting with objects and with other aerial vehicles. Aerial robotic manipulation is a main subject in this interest group."
         icon: "FiClock"
         image: "/images/collaboration.png"
-      - title: "IG3: Perception-based robotics"
-        content: "The interest group focuses on aerial robots with onboard intelligence and perception that allows positioning, simultaneous localization and mapping, navigation, object recognition, and tracking with limited power and computational capabilities."
+      - title: "IG3: Perception based aerial robotics"
+        content: "The interest group focuses on aerial robots with onboard intelligence and perception that allows the positioning, simultaneous localization and mapping, navigation, object recognition and tracking with limited power and computational capabilities."
         icon: "FiBell"
         image: "/images/sells-by-country.png"
 
